@@ -1,0 +1,13 @@
+The game is a quiz game about coding it have 2 catgores  html and javascript ,
+ there is 2 sections the mcq part and the fill in the blank part .
+-Creating an object that holds the questions and the answers 
+-Having a variable that holds the score 
+-Implement the sound
+-Creating buttons for thFor the fill in the ble mcq
+-ank i will use the ignorcase 
+-As a user I want to see the questions
+-As a user I want to see the answers
+-AS a user i want to see if my questions was right or wrong
+-As a user i want to see my score 
+-As a user I want to see the mcq buttons
+-As a user i want to hear the wining sound and the losing sound 
