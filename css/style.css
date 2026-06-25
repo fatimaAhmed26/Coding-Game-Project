@@ -1,5 +1,11 @@
 body{
     background-color: black;
-    font-family: gi"VT323", monospace;
+    font-family: "VT323", monospace;
     color: aliceblue;
+     margin: 0;
+    display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content:center ;
+  min-height: 100dvh;
 }

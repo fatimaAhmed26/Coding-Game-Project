@@ -1,10 +1,15 @@
 The game is a quiz game about coding it have 2 catgores  html and javascript ,
  there is 2 sections the mcq part and the fill in the blank part .
 -Creating an object that holds the questions and the answers 
+-creating divs for the questions
+-creating a div for the score and let a function manuplate it by using an if statment and textContent
 -Having a variable that holds the score 
 -Implement the sound
--Creating buttons for the mcq
--For the fill in the blank i will use the ignorcase 
+-Creating buttons for the mcq , 
+- an if statment for the correct answer 
+-For the fill in the blank use the ignorcase 
+-A section near every questions that changes according the answer if it was correct or wrong, 
+changing the text for "correct""wrong" using textContent
 -As a user I want to see the questions
 -As a user I want to see the answer
 -As a user i want to chose the answer
