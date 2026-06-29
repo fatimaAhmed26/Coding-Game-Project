@@ -27,6 +27,21 @@ const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
 
 /*-------------------------------- Functions --------------------------------*/
+//check the correct answer
+function checkAnswer(q, userChoice, answerStatus) {
+//   const btn = btn.querySelector('button')
+  if (userChoice.textContent === q.answer) {
+    answerStatus.textContent = 'correct answer'
+    answerStatus.style.color ='green'
+    
+} else {
+    answerStatus.textContent = 'wrong answer'
+     answerStatus.style.color ='red'
+     
+  }
+}
+
+//the questions
 function Questions() {
   for (let category in quizData) {
     const heading = document.createElement('h2')
@@ -52,11 +67,11 @@ function Questions() {
           const btn = document.createElement('button')
           btn.classList.add('answerMCQ')
           btn.textContent = option
+          //call checkAnswer when button is clicked
+          btn.addEventListener('click', function() {
+            checkAnswer(q, btn, answerStatus)
+          })
           questionDiv.appendChild(btn)
-          //checking is the button works 
-          btn.addEventListener('click',function(event){
-            console.log(q.options)
-                })
         })
       } else {
         const input = document.createElement('input')
@@ -67,9 +82,7 @@ function Questions() {
       container.appendChild(questionDiv)
     })
   }
-  //check the correct answer 
-
 }
-Questions()
 
 /*----------------------------- Event Listeners -----------------------------*/
+Questions()
