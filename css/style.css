@@ -23,3 +23,9 @@ header {
 .question{
   background-color: rgb(38, 40, 39);
 }
+button{
+   font-family: "VT323", monospace;
+}
+input{
+  font-family: "VT323", monospace;
+}

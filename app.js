@@ -1,35 +1,38 @@
 /*-------------------------------- Constants --------------------------------*/
 const quizData = {
   html: [
-    { id: "htmlQ1", question: "What does HTML stand for?", options: ["Hyper Text Makeup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Transfer Markup Language"], answer: "Hyper Text Markup Language" },
-    { id: "htmlQ2", question: "Which tag is used to display an image?", options: ["picture", "src", "img", "image"], answer: "img" },
-    { id: "htmlQ3", question: "Which attribute is used to specify the language of an HTML document?", options: ["charset", "locale", "lang", "language"], answer: "lang" },
-    { id: "htmlQ4", question: "Which input type shows a date picker in the browser?", options: ['type="calendar"', 'type="datetime"', 'type="date"', 'type="picker"'], answer: 'type="date"' },
-    { id: "htmlQ5", question: "The attribute that specifies the URL a link points to is ____", options: [], answer: "href" },
-    { id: "htmlQ6", question: "To create a clickable button in HTML you use the <____> tag", options: [], answer: "button" }
+    { id: "htmlQ1", type:'mcq' , question: "What does HTML stand for?", options: ["Hyper Text Makeup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Transfer Markup Language"], answer: "Hyper Text Markup Language" },
+    { id: "htmlQ2", type:'mcq', question: "Which tag is used to display an image?", options: ["picture", "src", "img", "image"], answer: "img" },
+    { id: "htmlQ3", type:'mcq',question: "Which attribute is used to specify the language of an HTML document?", options: ["charset", "locale", "lang", "language"], answer: "lang" },
+    { id: "htmlQ4", type:'mcq' ,question: "Which input type shows a date picker in the browser?", options: ['type="calendar"', 'type="datetime"', 'type="date"', 'type="picker"'], answer: 'type="date"' },
+    { id: "htmlQ5", type:'fitb', question: "The attribute that specifies the URL a link points to is ____", options: [], answer: "href" },
+    { id: "htmlQ6", type:'fitb', question: "To create a clickable button in HTML you use the <____> tag", options: [], answer: "button" }
   ],
   javascript: [
-    { id: "jsQ1", question: "Which keyword is used to declare a variable in modern JavaScript?", options: ["var", "let", "dim", "int"], answer: "let" },
-    { id: "jsQ2", question: "Which symbol is used for strict equality in JavaScript?", options: ["=", "==", "===", "!=="], answer: "===" },
-    { id: "jsQ3", question: "What is the output of typeof undefined?", options: ['"null"', '"object"', '"undefined"', '"void"'], answer: '"undefined"' },
-    { id: "jsQ4", question: "To select an HTML element by its ID in JS you use ____", options: [], answer: "document.getElementById()" },
-    { id: "jsQ5", question: 'To check if an array includes a certain value you use arr.____("value")', options: [], answer: "includes" },
-    { id: "jsQ6", question: "To generate a random number between 0 and 1 you use Math.____() ", options: [], answer: "random" }
+    { id: "jsQ1", type:'mcq', question: "Which keyword is used to declare a variable in modern JavaScript?", options: ["var", "let", "dim", "int"], answer: "let" },
+    { id: "jsQ2", type:'mcq' ,question: "Which symbol is used for strict equality in JavaScript?", options: ["=", "==", "===", "!=="], answer: "===" },
+    { id: "jsQ3", type:'mcq', question: "What is the output of typeof undefined?", options: ['"null"', '"object"', '"undefined"', '"void"'], answer: '"undefined"' },
+    { id: "jsQ4", type:'fitb', question: "To select an HTML element by its ID in JS you use ____", options: [], answer: "document.getElementById()" },
+    { id: "jsQ5", type:'fitb', question: 'To check if an array includes a certain value you use arr.____("value")', options: [], answer: "includes" },
+    { id: "jsQ6", type:'fitb', question: "To generate a random number between 0 and 1 you use Math.____() ", options: [], answer: "random" }
   ]
 };
 
 /*-------------------------------- Variables --------------------------------*/
 let userChoice = ''
-let userInput = ''
 
 /*------------------------ Cached Element References ------------------------*/
 const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
 
 /*-------------------------------- Functions --------------------------------*/
-//check the correct answer
+//check the correct answer in the mcq 
+// console.log(quizData.html[1].type);
+
 function checkAnswer(q, userChoice, answerStatus) {
 //   const btn = btn.querySelector('button')
+
+     if(quizData.html[0].type === 'mcq' || quizData.javascript[0].type === 'mcq'){
   if (userChoice.textContent === q.answer) {
     answerStatus.textContent = 'correct answer'
     answerStatus.style.color ='green'
@@ -37,9 +40,25 @@ function checkAnswer(q, userChoice, answerStatus) {
 } else {
     answerStatus.textContent = 'wrong answer'
      answerStatus.style.color ='red'
-     
-  }
+     }} if (quizData.html[0].type === 'fitb' || quizData.javascript[0].type === 'fitb'){
+        
+
+
+     }
+
 }
+// correct answer in fill in the blanck
+// function checkFITB(q ,userInput ,answerStatus) {
+//     if (userInput === q.answer){
+//          answerStatus.textContent = 'correct answer'
+//     answerStatus.style.color ='green'
+
+//     }else {
+//          answerStatus.textContent = 'correct answer'
+//     answerStatus.style.color ='green'
+//     }
+    
+// }
 
 //the questions
 function Questions() {
@@ -70,6 +89,11 @@ function Questions() {
           //call checkAnswer when button is clicked
           btn.addEventListener('click', function() {
             checkAnswer(q, btn, answerStatus)
+            const answerButtons = questionDiv.querySelectorAll('.answerMCQ')
+
+            answerButtons.forEach(function (button) {
+              button.disabled = true
+            })
           })
           questionDiv.appendChild(btn)
         })
