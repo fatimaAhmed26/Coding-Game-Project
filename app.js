@@ -26,39 +26,29 @@ const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
 
 /*-------------------------------- Functions --------------------------------*/
-//check the correct answer in the mcq 
-// console.log(quizData.html[1].type);
-
+//check the correct answer
 function checkAnswer(q, userChoice, answerStatus) {
-//   const btn = btn.querySelector('button')
-
-     if(quizData.html[0].type === 'mcq' || quizData.javascript[0].type === 'mcq'){
-  if (userChoice.textContent === q.answer) {
-    answerStatus.textContent = 'correct answer'
-    answerStatus.style.color ='green'
-    
-} else {
-    answerStatus.textContent = 'wrong answer'
-     answerStatus.style.color ='red'
-     }} if (quizData.html[0].type === 'fitb' || quizData.javascript[0].type === 'fitb'){
-        
-
-
-     }
-
+    //checks the mcq qs
+  if (q.type === 'mcq') {
+    if (userChoice.textContent === q.answer) {
+      answerStatus.textContent = 'correct answer'
+      answerStatus.style.color = 'green'
+    } else {
+      answerStatus.textContent = 'wrong answer'
+      answerStatus.style.color = 'red'
+    }
+  }
+  //checks the fill in the blank qs
+  if (q.type === 'fitb') {
+    if (userChoice === q.answer) {
+      answerStatus.textContent = 'correct answer'
+      answerStatus.style.color = 'green'
+    } else {
+      answerStatus.textContent = 'wrong answer'
+      answerStatus.style.color = 'red'
+    }
+  }
 }
-// correct answer in fill in the blanck
-// function checkFITB(q ,userInput ,answerStatus) {
-//     if (userInput === q.answer){
-//          answerStatus.textContent = 'correct answer'
-//     answerStatus.style.color ='green'
-
-//     }else {
-//          answerStatus.textContent = 'correct answer'
-//     answerStatus.style.color ='green'
-//     }
-    
-// }
 
 //the questions
 function Questions() {
@@ -90,8 +80,7 @@ function Questions() {
           btn.addEventListener('click', function() {
             checkAnswer(q, btn, answerStatus)
             const answerButtons = questionDiv.querySelectorAll('.answerMCQ')
-
-            answerButtons.forEach(function (button) {
+            answerButtons.forEach(function(button) {
               button.disabled = true
             })
           })
@@ -101,6 +90,14 @@ function Questions() {
         const input = document.createElement('input')
         input.type = 'text'
         input.classList.add('answer')
+        //check answer when user types and leaves the input
+        input.addEventListener('change', function() {
+          checkAnswer(q, input.value, answerStatus)
+          //to disable the answer input field  
+        //   const answerInput = questionDiv.querySelectorAll('.input')
+        //     answerInput.forEach(function(input) {
+        //        input.disabled = true})
+        })
         questionDiv.appendChild(input)
       }
       container.appendChild(questionDiv)
