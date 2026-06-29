@@ -20,6 +20,6 @@ header {
   width: 150px;
   height: auto;
 }
-div{
+.question{
   background-color: rgb(38, 40, 39);
 }
