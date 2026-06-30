@@ -94,10 +94,9 @@ function Questions() {
         input.addEventListener('change', function() {
           checkAnswer(q, input.value, answerStatus)
           //to disable the answer input field  
-        //   const answerInput = questionDiv.querySelectorAll('.input')
-        //     answerInput.forEach(function(input) {
-        //        input.disabled = true})
-        })
+               input.disabled = true
+            })
+               
         questionDiv.appendChild(input)
       }
       container.appendChild(questionDiv)
