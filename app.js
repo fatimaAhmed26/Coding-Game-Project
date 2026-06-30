@@ -21,6 +21,7 @@ const quizData = {
 /*-------------------------------- Variables --------------------------------*/
 let userChoice = ''
 let score = 0
+let userAnswer = 0
 
 /*------------------------ Cached Element References ------------------------*/
 const container = document.querySelector('#questions-container')
@@ -57,7 +58,25 @@ function checkAnswer(q, userChoice, answerStatus) {
       answerStatus.style.color = 'red'
     }
   }
-  
+        userAnswer=userAnswer+1
+    if (userAnswer === 12){
+        if(score === 12){
+            scoreEl.textContent= 'you did a great job🎉🎉🎉🎉'
+        }
+        else if(userAnswer <= 11 && userAnswer <= 8 )
+            {
+                scoreEl.textContent= 'Nice work👌'
+
+        }else if(userAnswer <= 7 && userAnswer <= 3 )
+            {
+                scoreEl.textContent= 'oops not very good!🥲'
+
+        }
+        else {
+            scoreEl.textContent= 'OMG run ❌❌❌'
+        }
+    }
+
 }
 
 //the questions
