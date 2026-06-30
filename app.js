@@ -27,6 +27,8 @@ let userAnswer = 0
 const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
 const finalResult = document.querySelector('#final-result')
+const correctAnswer = new Audio('assets/audio/Correct.mp3')
+const wrongAnswer = new Audio('assets/audio/Wrong.mp3')
 
 /*-------------------------------- Functions --------------------------------*/
 //check the correct answer
@@ -36,6 +38,7 @@ function checkAnswer(q, userChoice, answerStatus) {
     if (userChoice.textContent === q.answer) {
       answerStatus.textContent = 'correct answer'
       answerStatus.style.color = 'green'
+      correctAnswer.play()
       // a loop for the score
     //    for(score ; 0 < scoreEl ; score++){
     //     return 
@@ -45,6 +48,7 @@ function checkAnswer(q, userChoice, answerStatus) {
     } else {
       answerStatus.textContent = 'wrong answer'
       answerStatus.style.color = 'red'
+      wrongAnswer.play()
     }
   }
   //checks the fill in the blank qs
@@ -52,11 +56,13 @@ function checkAnswer(q, userChoice, answerStatus) {
     if (userChoice === q.answer) {
       answerStatus.textContent = 'correct answer'
       answerStatus.style.color = 'green'
+       correctAnswer.play()
        score=score+1
         scoreEl.textContent= (`score : ${score} out of 12`)
      } else {
       answerStatus.textContent = 'wrong answer'
       answerStatus.style.color = 'red'
+      wrongAnswer.play()
     }
   }
         userAnswer=userAnswer+1
