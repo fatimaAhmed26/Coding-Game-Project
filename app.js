@@ -26,6 +26,7 @@ let userAnswer = 0
 /*------------------------ Cached Element References ------------------------*/
 const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
+const finalResult = document.querySelector('#final-result')
 
 /*-------------------------------- Functions --------------------------------*/
 //check the correct answer
@@ -61,19 +62,19 @@ function checkAnswer(q, userChoice, answerStatus) {
         userAnswer=userAnswer+1
     if (userAnswer === 12){
         if(score === 12){
-            scoreEl.textContent= 'you did a great job🎉🎉🎉🎉'
+            finalResult.textContent= 'you did a great job🎉🎉🎉🎉'
         }
-        else if(userAnswer <= 11 && userAnswer <= 8 )
+        else if(score <= 11 && score >= 7 )
             {
-                scoreEl.textContent= 'Nice work👌'
+                finalResult.textContent= 'Nice work👌'
 
-        }else if(userAnswer <= 7 && userAnswer <= 3 )
+        }else if(score <= 6 && score >= 3 )
             {
-                scoreEl.textContent= 'oops not very good!🥲'
+                finalResult.textContent= 'oops not very good!🥲'
 
         }
         else {
-            scoreEl.textContent= 'OMG run ❌❌❌'
+            finalResult.textContent= 'OMG run ❌❌❌'
         }
     }
 
