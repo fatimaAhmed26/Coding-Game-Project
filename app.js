@@ -12,7 +12,7 @@ const quizData = {
     { id: "jsQ1", type:'mcq', question: "Which keyword is used to declare a variable in modern JavaScript?", options: ["var", "let", "dim", "int"], answer: "let" },
     { id: "jsQ2", type:'mcq' ,question: "Which symbol is used for strict equality in JavaScript?", options: ["=", "==", "===", "!=="], answer: "===" },
     { id: "jsQ3", type:'mcq', question: "What is the output of typeof undefined?", options: ['"null"', '"object"', '"undefined"', '"void"'], answer: '"undefined"' },
-    { id: "jsQ4", type:'fitb', question: "To select an HTML element by its ID in JS you use ____", options: [], answer: "document.getElementById()" },
+    { id: "jsQ4", type:'fitb', question: "To select an HTML element by its ID in JS you use ____", options: [], answer: "getElementById" },
     { id: "jsQ5", type:'fitb', question: 'To check if an array includes a certain value you use arr.____("value")', options: [], answer: "includes" },
     { id: "jsQ6", type:'fitb', question: "To generate a random number between 0 and 1 you use Math.____() ", options: [], answer: "random" }
   ]
@@ -20,6 +20,7 @@ const quizData = {
 
 /*-------------------------------- Variables --------------------------------*/
 let userChoice = ''
+let score = 0
 
 /*------------------------ Cached Element References ------------------------*/
 const container = document.querySelector('#questions-container')
@@ -33,6 +34,12 @@ function checkAnswer(q, userChoice, answerStatus) {
     if (userChoice.textContent === q.answer) {
       answerStatus.textContent = 'correct answer'
       answerStatus.style.color = 'green'
+      // a loop for the score
+    //    for(score ; 0 < scoreEl ; score++){
+    //     return 
+    score=score+1
+        scoreEl.textContent= (`score :${score}`)
+    //    }
     } else {
       answerStatus.textContent = 'wrong answer'
       answerStatus.style.color = 'red'
@@ -43,11 +50,14 @@ function checkAnswer(q, userChoice, answerStatus) {
     if (userChoice === q.answer) {
       answerStatus.textContent = 'correct answer'
       answerStatus.style.color = 'green'
-    } else {
+       score=score+1
+        scoreEl.textContent= (`score : ${score} out of 12`)
+     } else {
       answerStatus.textContent = 'wrong answer'
       answerStatus.style.color = 'red'
     }
   }
+  
 }
 
 //the questions
