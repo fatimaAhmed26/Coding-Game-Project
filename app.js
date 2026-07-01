@@ -29,6 +29,9 @@ const scoreEl = document.querySelector('#score')
 const finalResult = document.querySelector('#final-result')
 const correctAnswer = new Audio('assets/audio/Correct.mp3')
 const wrongAnswer = new Audio('assets/audio/Wrong.mp3')
+const reset =document.querySelector('#reset')
+const popup =document.querySelector('#popUp')
+console.log(popup);
 
 /*-------------------------------- Functions --------------------------------*/
 //check the correct answer
@@ -67,7 +70,9 @@ function checkAnswer(q, userChoice, answerStatus) {
   }
         userAnswer=userAnswer+1
     if (userAnswer === 12){
+      popup.style.visibility='visible'
         if(score === 12){
+          
             finalResult.textContent= 'you did a great job🎉🎉🎉🎉'
         }
         else if(score <= 11 && score >= 7 )
@@ -82,9 +87,10 @@ function checkAnswer(q, userChoice, answerStatus) {
         else {
             finalResult.textContent= 'OMG run ❌❌❌'
         }
+          
     }
 
-}
+} 
 
 //the questions
 function Questions() {
@@ -138,7 +144,12 @@ function Questions() {
       container.appendChild(questionDiv)
     })
   }
-}
 
+}
+ 
+ reset.addEventListener('click' ,function(){
+ window.location.reload()
+         
+      })
 /*----------------------------- Event Listeners -----------------------------*/
 Questions()
