@@ -1,10 +1,11 @@
-body{
+ @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=VT323&display=swap');
+
+ body{
     background-color: black;
     font-family: "VT323", monospace;
     color: aliceblue;
      margin: 0;
     display: flex;
-   flex-direction: column;
   align-items: center;
   justify-content:center ;
   min-height: 100dvh;
@@ -19,13 +20,64 @@ header {
   img {
   width: 150px;
   height: auto;
-}
+ }
+
 .question{
   background-color: rgb(38, 40, 39);
 }
-button{
-   font-family: "VT323", monospace;
-}
+
 input{
   font-family: "VT323", monospace;
 }
+input:hover{
+  background-color: #598392;
+}
+
+
+.question {
+  font-size: 20px;
+  display: block;
+  width: 32dvw;
+  gap: 20px;
+  border: 0;
+  align-items: center;
+}
+
+button{
+   font-family: "VT323", monospace;
+   display: inline;
+  margin: 20px;
+}
+
+div:button{
+  gap: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+button{
+  border: 0;
+  width: 80px;
+  height: 80px;
+
+   
+}
+button:hover{
+ background-color: #598392;
+ 
+}
+/*
+
+
+
+
+.answerMCQ{
+  justify-content: space-around;
+  gap: 10px;
+  padding: 10px;
+
+
+}
+button:hover{
+ background-color: #598392;
+ 
+}  */
