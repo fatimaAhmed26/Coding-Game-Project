@@ -1,19 +1,15 @@
- @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=VT323&display=swap');
 
- body{
-    background-color: #fde2e4;
-    font-family: "VT323", monospace;
-    color: black;
-     margin: 0;
-    display: flex;
-    flex-direction: column;
+body {
+  background-color: #fde2e4;
+  font-family: "VT323", monospace;
+  color: black;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content:center ;
+  justify-content: center;
   min-height: 100dvh;
-  font-size: 25px;
-}
-
-#questions-container{
   font-size: 25px;
 }
 
@@ -23,77 +19,97 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
 }
 
-  img {
+img {
   width: 300px;
   height: auto;
- }
-
-input{
-  font-family: "VT323", monospace;
-}
-input:hover{
-  background-color: #fe5d9f;
-}
-
-
-.question {
-  font-size: 20px;
-  display: block;
-  width: 30dvw;
-  height: 16dvw ;
-  gap: 20px;
-  border: 0;
-  align-items: center;
-  background-color: #fad2e1;
-  
-}
-
-button{
-   font-family: "VT323", monospace;
-   display: inline;
-  margin: 20px;
   border-radius: 10px;
 }
 
-div:button{
-  gap: 10px;
-  flex-direction: row;
-  justify-content: space-between;
+#questions-container {
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
-button{
-  border: 0;
-  width: 100px;
-  height: 30px;
 
-   
+.question {
+  font-size: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 600px;
+  min-height: 250px;
+  padding: 20px;
+  border: 0;
+  border-radius: 10px;
+  background-color: #fad2e1;
 }
-button:hover{
- background-color: #fe5d9f;
- 
+
+.question p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
 }
-#popUp{
+
+input {
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  padding: 5px;
+  width: 250px;
+}
+
+input:hover {
+  background-color: #fe5d9f;
+}
+
+.question button {
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  border: 0;
+  border-radius: 10px;
+  flex: 1;
+  height: 50px;
+  cursor: pointer;
+}
+
+.question button:hover {
+  background-color: #fe5d9f;
+}
+
+#popUp {
   background-color: #fad2e1;
   display: flex;
   flex-direction: column;
   align-items: center;
- visibility: hidden;
-   font-size: 20px;
-  width: 30dvw;
-  height: 16dvw ;
-  gap: 20px;
+  visibility: hidden;
+  font-size: 20px;
+  width: 500px;
+  min-height: 250px;
+  padding: 20px;
   border: 0;
+  border-radius: 10px;
+  gap: 20px;
   margin: 2%;
-  
 }
-footer{
+
+footer {
   background-color: #fad2e1;
   border: 0;
-     padding: 20px;
+  padding: 20px;
   text-align: center;
   width: 100%;
 }
-
-
+#reset{
+   font-family: "VT323", monospace;
+  font-size: 16px;
+  border: 0;
+  border-radius: 10px;
+  height: 50px;
+  cursor: pointer;
+}
