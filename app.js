@@ -1,4 +1,3 @@
-/*-------------------------------- Constants --------------------------------*/
 const quizData = {
   html: [
     { id: "htmlQ1", type:'mcq' , question: "What does HTML stand for?", options: ["Hyper Text Makeup Language", "Hyper Text Markup Language", "High Text Markup Language", "Hyper Transfer Markup Language"], answer: "Hyper Text Markup Language" },
@@ -18,12 +17,10 @@ const quizData = {
   ]
 };
 
-/*-------------------------------- Variables --------------------------------*/
 let userChoice = ''
 let score = 0
 let userAnswer = 0
 
-/*------------------------ Cached Element References ------------------------*/
 const container = document.querySelector('#questions-container')
 const scoreEl = document.querySelector('#score')
 const finalResult = document.querySelector('#final-result')
@@ -33,10 +30,7 @@ const reset =document.querySelector('#reset')
 const popup =document.querySelector('#popUp')
 const popupFR=document.querySelector('#popupFR')
 
-/*-------------------------------- Functions --------------------------------*/
-//check the correct answer
 function checkAnswer(q, userChoice, answerStatus) {
-    //checks the mcq qs
   if (q.type === 'mcq') {
     if (userChoice.textContent === q.answer) {
       answerStatus.textContent = 'correct answer'
@@ -51,7 +45,6 @@ function checkAnswer(q, userChoice, answerStatus) {
       wrongAnswer.play()
     }
   }
-  //checks the fill in the blank qs
   if (q.type === 'fitb') {
     if (userChoice === q.answer) {
       answerStatus.textContent = 'correct answer'
@@ -90,7 +83,6 @@ function checkAnswer(q, userChoice, answerStatus) {
 
 } 
 
-//the questions
 function Questions() {
   for (let category in quizData) {
     const heading = document.createElement('h2')
@@ -116,7 +108,6 @@ function Questions() {
           const btn = document.createElement('button')
           btn.classList.add('answerMCQ')
           btn.textContent = option
-          //call checkAnswer when button is clicked
           btn.addEventListener('click', function() {
             checkAnswer(q, btn, answerStatus)
             const answerButtons = questionDiv.querySelectorAll('.answerMCQ')
@@ -130,10 +121,8 @@ function Questions() {
         const input = document.createElement('input')
         input.type = 'text'
         input.classList.add('answer')
-        //check answer when user types and leaves the input
         input.addEventListener('change', function() {
           checkAnswer(q, input.value, answerStatus)
-          //to disable the answer input field  
                input.disabled = true
             })
                
@@ -149,5 +138,5 @@ function Questions() {
  window.location.reload()
          
       })
-/*----------------------------- Event Listeners -----------------------------*/
+
 Questions()
