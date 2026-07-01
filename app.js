@@ -31,7 +31,7 @@ const correctAnswer = new Audio('assets/audio/Correct.mp3')
 const wrongAnswer = new Audio('assets/audio/Wrong.mp3')
 const reset =document.querySelector('#reset')
 const popup =document.querySelector('#popUp')
-console.log(popup);
+const popupFR=document.querySelector('#popupFR')
 
 /*-------------------------------- Functions --------------------------------*/
 //check the correct answer
@@ -70,6 +70,7 @@ function checkAnswer(q, userChoice, answerStatus) {
   }
         userAnswer=userAnswer+1
     if (userAnswer === 12){
+      popupFR.textContent=score
       popup.style.visibility='visible'
         if(score === 12){
           
