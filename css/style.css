@@ -1,20 +1,26 @@
  @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=VT323&display=swap');
 
  body{
-    background-color: black;
+    background-color: #fde2e4;
     font-family: "VT323", monospace;
-    color: aliceblue;
+    color: black;
      margin: 0;
     display: flex;
+    flex-direction: column;
   align-items: center;
   justify-content:center ;
   min-height: 100dvh;
 }
 
+
 header {
+  padding-top: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  /* justify-content: center; */
+  gap: 40px;
+  /* align-self:flex-start; */
 }
 
   img {
@@ -30,23 +36,26 @@ input{
   font-family: "VT323", monospace;
 }
 input:hover{
-  background-color: #598392;
+  background-color: #fe5d9f;
 }
 
 
 .question {
   font-size: 20px;
   display: block;
-  width: 32dvw;
+  width: 55dvw;
+  height: 18dvw ;
   gap: 20px;
   border: 0;
   align-items: center;
+  background-color: #fad2e1;
 }
 
 button{
    font-family: "VT323", monospace;
    display: inline;
   margin: 20px;
+  border-radius: 10px;
 }
 
 div:button{
@@ -56,14 +65,22 @@ div:button{
 }
 button{
   border: 0;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 30px;
 
    
 }
 button:hover{
- background-color: #598392;
+ background-color: #fe5d9f;
  
+}
+#popUp{
+  background-color: #fe5d9f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55dvw;
+  height: 18dvw ;
 }
 /*
 
