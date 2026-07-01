@@ -88,5 +88,12 @@ button:hover{
   margin: 2%;
   
 }
+footer{
+  background-color: #fad2e1;
+  border: 0;
+     padding: 20px;
+  text-align: center;
+  width: 100%;
+}
 
 
