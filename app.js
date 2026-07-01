@@ -42,12 +42,9 @@ function checkAnswer(q, userChoice, answerStatus) {
       answerStatus.textContent = 'correct answer'
       answerStatus.style.color = 'green'
       correctAnswer.play()
-      // a loop for the score
-    //    for(score ; 0 < scoreEl ; score++){
-    //     return 
     score=score+1
         scoreEl.textContent= (`score :${score}`)
-    //    }
+    
     } else {
       answerStatus.textContent = 'wrong answer'
       answerStatus.style.color = 'red'
